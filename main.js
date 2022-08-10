@@ -20,12 +20,15 @@ function Car(model, year) {
     this.numWheels = 4;
 }
 Car.prototype = Object.create(Vehicle.prototype);
+Car.prototype.constructor = Car;
 
 function Motorcycle(model, year) {
     Vehicle.call(this, model, year);
     this.numWheels = 2;
 }
 Motorcycle.prototype = Object.create(Vehicle.prototype);
+Motorcycle.prototype.constructor = Motorcycle;
+
 
 const car = new Car("Tesla", 2020);
 console.log(car.model); // Tesla
